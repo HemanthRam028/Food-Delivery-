@@ -1,0 +1,77 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  height: 100vh;
+  background-color: rgb(223, 217, 217); /* Set background color for better visibility */
+  margin: 0; /* Remove default body margin */
+}
+
+.signin {
+  text-align: center; /* Center text within the signin container */
+}
+
+.text-box {
+  position: relative; /* Position relative for the pseudo-element */
+  padding: 20px;
+  border-radius: 15px; /* Rounded corners */
+  background-color: rgba(198, 159, 159, 0.1); /* Semi-transparent background */
+  z-index: 2; /* Ensure text box is above blurred elements */
+}
+
+/* Create a pseudo-element for the outer border effect */
+.text-box::before {
+  content: "";
+  position: absolute;
+  top: -10px; /* Extend outside the top */
+  left: -10px; /* Extend outside the left */
+  right: -10px; /* Extend outside the right */
+  bottom: -10px; /* Extend outside the bottom */
+  border-radius: 15px; /* Match the border radius */
+  background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 800%; /* Extend background for animation */
+  animation: rainbow-border 4s linear infinite; /* Animation for the border */
+  z-index: -1; /* Behind the text box */
+}
+
+/* Keyframes for the rainbow animation */
+@keyframes rainbow-border {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+
+
+.glowing-text {
+  color: white;
+  text-shadow: 0 0 5px cyan, 0 0 10px cyan, 0 0 15px cyan;
+}
+
+.logo {
+  display: block;
+  margin: 30px auto; /* Center the logo */
+  filter: blur(0); /* No blur on logo */
+  border-radius: 10px; /* Added border radius */
+  width: 550px; /* Increase the width of the logo */
+  height: auto; /* Maintain the aspect ratio */
+}
+
+
+.google-login-btn {
+  padding: 10px 20px;
+  background-color: #4285F4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.google-login-btn:hover {
+  background-color: #357ae8;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

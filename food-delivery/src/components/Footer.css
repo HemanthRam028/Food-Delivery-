@@ -1,0 +1,127 @@
+html, body {
+  height: 100%; /* Ensure html and body take full height */
+  margin: 0; /* Remove default margin */
+}
+.footer {
+  display: block;
+  position: relative; /* Make footer fixed to the bottom */
+  bottom: 0; /* Position it at the bottom of the viewport */
+  left: 0; /* Align to the left edge */
+  width: 100%; /* Full width of the viewport */
+  background-color: #e9830f; /* Footer background color */
+  color: white; /* Text color */
+  padding: 20px; /* Padding inside the footer */
+  text-align: center; /* Center the text */
+  overflow: hidden;
+  z-index: 1000;  /* Prevent overflow issues */
+}
+
+/* Waves styling */
+.waves {
+  position: absolute; /* Position waves relative to the footer */
+  left: 0;
+  bottom: 100%; /* Position at the bottom of the footer */
+  width: 100%; /* Full width of the footer */
+  height: 150px; /* Height of the waves */
+  z-index: -1; /* Place behind other content */
+}
+
+.wave {
+  position: absolute; /* Position waves inside the waves container */
+  bottom: 0; /* Align waves to the bottom */
+  width: 100%; /* Full width for each wave */
+  height: 150px; /* Height of each wave */
+  background-repeat: no-repeat; /* Prevent wave repetition */
+  background-size: cover; /* Cover the entire wave area */
+  animation: wave-animation 15s linear infinite; /* Animation for wave motion */
+}
+
+#wave1 {
+  animation-delay: 0s; /* Delay for the first wave */
+}
+#wave2 {
+  animation-delay: 2s; /* Delay for the second wave */
+}
+#wave3 {
+  animation-delay: 4s; /* Delay for the third wave */
+}
+#wave4 {
+  animation-delay: 6s; /* Delay for the fourth wave */
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: translateX(0); /* Start position */
+  }
+  100% {
+    transform: translateX(-100%); /* End position */
+  }
+}
+
+/* Navigation styling */
+nav {
+  margin: 20px 0; /* Margin for navigation items */
+}
+
+nav a {
+  color: white; /* Navigation link color */
+  margin: 0 15px; /* Margin between links */
+  text-decoration: none; /* No underline */
+  transition: color 0.3s; /* Transition for hover effect */
+}
+
+nav a:hover {
+  color: #61dafb; /* Change color on hover */
+}
+
+/* Social icons styling */
+.social-icon {
+  list-style-type: none; /* No bullet points for list */
+  padding: 0; /* Remove padding */
+  display: flex; /* Flexbox for social icons */
+  justify-content: center; /* Center icons horizontally */
+  margin: 20px 0; /* Margin for spacing */
+}
+
+.social-icon__item {
+  margin: 0 10px; /* Margin between social icons */
+}
+
+.social-icon__link {
+  color: white; /* Social icon link color */
+  font-size: 24px; /* Font size for icons */
+  transition: color 0.3s; /* Transition for hover effect */
+}
+
+.social-icon__link:hover {
+  color: #61dafb; /* Change color on hover */
+}
+
+/* Footer text styling */
+p {
+  margin-top: 20px; /* Margin for footer text */
+  font-size: 14px; /* Font size for text */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column; /* Stack navigation links vertically */
+  }
+
+  nav a {
+    margin: 10px 0; /* Margin for vertical spacing */
+  }
+
+  .social-icon {
+    flex-direction: column; /* Stack social icons vertically */
+  }
+
+  .social-icon__item {
+    margin: 5px 0; /* Margin for vertical spacing */
+  }
+
+  p {
+    font-size: 12px; /* Smaller font size for mobile */
+  }
+}

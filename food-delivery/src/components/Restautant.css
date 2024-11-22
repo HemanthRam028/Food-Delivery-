@@ -1,0 +1,71 @@
+.restaurant-card {
+    background-color: #ffffff; /* Card background */
+    border: 1px solid #ddd; /* Border around the card */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px;
+    text-align: center;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s; /* Animation on hover */
+  }
+  
+  .restaurant-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+  }
+  
+  .restaurant-image {
+    width: 100%; /* Full width of the card */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for the image */
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    font-size: 1.5rem; /* Heading size */
+    margin-bottom: 10px;
+    color: #333; /* Heading color */
+  }
+  
+  p {
+    font-size: 1rem; /* Description size */
+    margin: 10px 0;
+    color: #666; /* Description color */
+  }
+  
+  span {
+    display: block; /* Block display for better spacing */
+    margin: 10px 0;
+    font-weight: bold; /* Bold rating */
+    color: #333; /* Rating color */
+  }
+  
+  button {
+    background-color: #61dafb; /* Button color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #21a1f1; /* Darker shade on hover */
+    transform: translateY(-2px); /* Lift effect */
+  }
+  
+  /* Grid Layout for Restaurant Cards */
+  .restaurant-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Four cards per row */
+    gap: 20px; /* Space between cards */
+    padding: 20px; /* Padding around the grid */
+  }
+  
+  @media (max-width: 768px) {
+    .restaurant-card-container {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Adjust for smaller screens */
+    }
+  }
+  

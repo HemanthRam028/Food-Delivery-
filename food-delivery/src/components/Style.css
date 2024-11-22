@@ -1,0 +1,314 @@
+/* Global styling */
+html, body {
+    height: 100%; /* Ensure html and body take full height */
+    margin: 0; /* Remove default margin */
+  }
+  
+  /* Header styling */
+  .header {
+    display: flex;
+    position: fixed; /* Keep header fixed at the top */
+    top: 0; /* Position at the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    background-color: #e9830f; /* Header background color */
+    color: white; /* Text color */
+    padding: 5px; /* Padding inside header */
+    text-align: center; /* Center-align text */
+    z-index: 1000; /* Keep it above other content */
+    overflow: hidden; /* Hide overflow */
+    transition: transform 0.3s ease-out; /* Smooth slide up transition */
+  }
+  
+  /* When scrolling down, header moves up and is not visible */
+  body.scrolled-down .header {
+    transform: translateY(-100%); /* Moves the header out of the viewport */
+  }
+  
+  /* Main content area */
+  .content {
+    min-height: 100vh; /* Ensure content takes full height of the viewport */
+    padding-top: 80px; /* Adjust based on header height */
+    background-color: #f5f5f5; /* Background color for main content */
+  }
+  
+  /* User Page Styling */
+  .user-page {
+    position: relative;
+    padding: 20px;
+    margin-top: 80px; /* Adjust based on the height of your header */
+    background-color: #f5f5f5; /* Light background for contrast */
+    text-align: center;
+  }
+  
+  h2 {
+    color: #e9830f; /* Primary color for headings */
+  }
+  
+  h3 {
+    margin-bottom: 20px;
+    color: #333; /* Darker color for subtitles */
+  }
+  
+  .restaurant-list {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap */
+    justify-content: center; /* Center align items */
+  }
+  
+  .restaurant-card {
+    background: white; /* White background for cards */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 10px; /* Space between cards */
+    padding: 15px; /* Internal spacing */
+    width: 250px; /* Fixed width for consistency */
+    transition: transform 0.3s; /* Animation on hover */
+  }
+  
+  .restaurant-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+  }
+  
+  .restaurant-image {
+    width: 100%; /* Full width */
+    border-radius: 8px; /* Rounded image corners */
+  }
+  
+  .restaurant-info {
+    margin-top: 10px; /* Space above the info section */
+  }
+  
+  .restaurant-name {
+    font-weight: bold; /* Bold for restaurant name */
+    font-size: 1.2rem; /* Slightly larger font size */
+    color: #333; /* Dark text color */
+  }
+  
+  .restaurant-description {
+    font-size: 0.9rem; /* Smaller font size for description */
+    color: #666; /* Gray text for description */
+  }
+  
+  .restaurant-rating {
+    color: #e9830f; /* Primary color for rating */
+  }
+  
+  .view-menu-button {
+    background-color: #2677fa; /* Button color */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px; /* Button padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+    margin-top: 10px; /* Space above button */
+  }
+  
+  .view-menu-button:hover {
+    background-color: #4c0ccd; /* Darker color on hover */
+  }
+  
+  /* Logo styling */
+  .logo-container {
+    margin-right: 40px; /* Space between logo and search */
+    display: inline-block; /* Align logo */
+  }
+  
+  .logo1 {
+    width: 210px; /* Logo width */
+    height: auto; /* Auto height */
+    filter: drop-shadow(2px 2px 20px rgb(230, 102, 77)) 
+            drop-shadow(0 0 10px cyan) 
+            drop-shadow(0 0 20px cyan); /* Added glow effect using drop-shadow */
+  }
+  
+  /* Search container styling */
+  .search-container {
+    display: flex; /* Align search elements horizontally */
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to start */
+    margin-left: 40px; /* Space from the left */
+  }
+  
+  .glow-text {
+    font-size: 2.5rem; /* Font size for glowing text */
+    color: #f5f6ef; /* Text color */
+    text-shadow: 0 0 5px cyan, 0 0 10px cyan, 0 0 15px cyan; /* Glowing effect */
+  }
+  
+  /* Search bar styling */
+  .search-bar {
+    padding: 10px; /* Padding for search bar */
+    width: 300px; /* Width of search bar */
+    border-radius: 5px; /* Rounded corners */
+    border: none; /* Remove border */
+    box-shadow: 0 0 15px rgba(255, 99, 71, 0.5); /* Box shadow effect */
+    font-size: 1rem; /* Font size */
+    margin-top: 10px; /* Space above search bar */
+  }
+  
+  /* Navigation styling */
+  .nav {
+    display: flex; /* Use flexbox for navigation */
+    align-items: center; /* Align items vertically */
+    justify-content: flex-end; /* Align items to the right */
+    flex: 1; /* Allow nav to take available space */
+  }
+  
+  /* User info styling */
+  .user-info {
+    display: flex; /* Use flexbox for user info */
+    align-items: center; /* Align items vertically */
+    margin-left: 10px; /* Space between user info and buttons */
+  }
+  
+  /* Button styling */
+  button {
+    background-color: #2677fa; /* Button background color */
+    color: rgb(34, 74, 233); /* Button text color */
+    border: none; /* Remove border */
+    padding: 10px 10px; /* Padding inside button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+    font-size: 16px; /* Font size */
+    margin-left: 10px; /* Space between buttons */
+  }
+  
+  button:hover {
+    background-color: #4c0ccd; /* Change background color on hover */
+  }
+  
+  /* Footer styling */
+  .footer {
+    position: fixed; /* Make footer fixed to the bottom */
+    bottom: 0; /* Position it at the bottom of the viewport */
+    left: 0; /* Align to the left edge */
+    width: 100%; /* Full width of the viewport */
+    background-color: #e9830f; /* Footer background color */
+    color: white; /* Text color */
+    padding: 20px; /* Padding inside the footer */
+    text-align: center; /* Center the text */
+    overflow: hidden; /* Prevent overflow issues */
+  }
+  
+  /* Waves styling */
+  .waves {
+    position: absolute; /* Position waves relative to the footer */
+    left: 0;
+    bottom: 100%; /* Position at the bottom of the footer */
+    width: 100%; /* Full width of the footer */
+    height: 150px; /* Height of the waves */
+    z-index: -1; /* Place behind other content */
+  }
+  
+  .wave {
+    position: absolute; /* Position waves inside the waves container */
+    bottom: 0; /* Align waves to the bottom */
+    width: 100%; /* Full width for each wave */
+    height: 150px; /* Height of each wave */
+    background-repeat: no-repeat; /* Prevent wave repetition */
+    background-size: cover; /* Cover the entire wave area */
+    animation: wave-animation 15s linear infinite; /* Animation for wave motion */
+  }
+  
+  #wave1 {
+    animation-delay: 0s; /* Delay for the first wave */
+  }
+  #wave2 {
+    animation-delay: 2s; /* Delay for the second wave */
+  }
+  #wave3 {
+    animation-delay: 4s; /* Delay for the third wave */
+  }
+  #wave4 {
+    animation-delay: 6s; /* Delay for the fourth wave */
+  }
+  
+  @keyframes wave-animation {
+    0% {
+      transform: translateX(0); /* Start position */
+    }
+    100% {
+      transform: translateX(-100%); /* End position */
+    }
+  }
+  
+  /* Navigation styling */
+  nav {
+    margin: 20px 0; /* Margin for navigation items */
+  }
+  
+  nav a {
+    color: white; /* Navigation link color */
+    margin: 0 15px; /* Margin between links */
+    text-decoration: none; /* No underline */
+    transition: color 0.3s; /* Transition for hover effect */
+  }
+  
+  nav a:hover {
+    color: #61dafb; /* Change color on hover */
+  }
+  
+  /* Social icons styling */
+  .social-icon {
+    list-style-type: none; /* No bullet points for list */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    display: flex; /* Use flexbox for social icons */
+    justify-content: center; /* Center icons */
+  }
+  
+  .social-icon li {
+    margin: 0 10px; /* Space between icons */
+  }
+  
+  .social-icon img {
+    width: 30px; /* Width of social icons */
+    height: 30px; /* Height of social icons */
+    transition: transform 0.3s; /* Smooth transition on hover */
+  }
+  
+  .social-icon img:hover {
+    transform: scale(1.1); /* Scale effect on hover */
+  }
+  
+  /* Checkout page styling */
+  .checkout-container {
+    padding: 20px; /* Padding for checkout */
+    margin-top: 80px; /* Adjust based on header height */
+    text-align: center; /* Center align text */
+  }
+  
+  .checkout-form {
+    display: flex; /* Use flexbox for form layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align form items */
+  }
+  
+  .checkout-form input {
+    padding: 10px; /* Padding for input fields */
+    margin: 10px 0; /* Margin for input fields */
+    border-radius: 5px; /* Rounded corners for inputs */
+    border: 1px solid #ccc; /* Border for inputs */
+    width: 300px; /* Width of input fields */
+  }
+  
+  .checkout-form button {
+    background-color: #2677fa; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    padding: 10px; /* Button padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+  }
+  
+  .checkout-form button:hover {
+    background-color: #4c0ccd; /* Darker color on hover */
+  }
+  
