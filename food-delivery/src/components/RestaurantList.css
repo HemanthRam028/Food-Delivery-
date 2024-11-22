@@ -1,0 +1,56 @@
+.restaurant-list {
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+select {
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.restaurant-cards-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of items if they overflow */
+  justify-content: center; /* Center the items */
+  gap: 20px; /* Space between cards */
+}
+
+.restaurant-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 200px; /* Set a fixed width for each card */
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.restaurant-card img {
+  width: 100%;
+  border-radius: 8px 8px 0 0; /* Rounded corners for the top */
+}
+
+.restaurant-card h3 {
+  margin: 10px;
+  font-size: 18px;
+}
+
+.restaurant-card p {
+  margin: 10px;
+  font-size: 14px;
+}
+
+.restaurant-card .rating {
+  margin: 10px;
+  font-size: 14px;
+  color: #ff9800; /* Color for the rating */
+}
+
+.restaurant-card:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+}

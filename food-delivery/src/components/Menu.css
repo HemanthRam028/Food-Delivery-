@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f4f4f4; /* Added a background color for the body */
+}
+
+.food-area {
+  padding: 100px 0;
+}
+
+.container {
+  width: 90%; /* Changed to responsive width */
+  max-width: 1170px; /* Set a max width */
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.title p {
+  font-family: 'Oleo Script Swash Caps', cursive;
+  font-size: 22px;
+}
+
+.title h4 {
+  text-transform: uppercase;
+  font-size: 40px;
+  margin-top: 5px;
+}
+
+.foods {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.single-food {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  flex-basis: 31%;
+  transition: box-shadow 0.3s; /* Added hover effect for shadow */
+}
+
+.single-food:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Slight shadow on hover */
+}
+
+.food-img {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.food-img img {
+  border-radius: 12px 12px 0 0;
+  transition: transform 0.3s; /* Improved image transition */
+}
+
+.food-img h4 {
+  position: absolute;
+  left: 0;
+  top: -50px;
+  background-color: #ff7720;
+  color: #fff;
+  text-transform: capitalize;
+  padding: 10px 20px;
+  font-size: 22px;
+  font-weight: 600;
+  transition: top 0.3s; /* Improved title transition */
+}
+
+.single-food:hover .food-img h4 {
+  top: 0;
+}
+
+.single-food:hover img {
+  transform: scale(1.1) rotate(3deg); /* Image scale and rotate effect on hover */
+}
+
+.food-list {
+  padding: 20px;
+  list-style: none;
+}
+
+.food-list li {
+  font-weight: 400;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.food-list li:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-weight: 600;
+}
+
+.single-food a {
+  text-decoration: none; /* Corrected text decoration */
+  background-color: #ff7720;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: block;
+  padding: 10px 20px;
+  width: 160px;
+  margin: 20px auto 25px auto;
+  border-radius: 9px;
+  transition: background-color 0.3s; /* Added transition for background */
+}
+
+.single-food a:hover {
+  background-color: orange; /* Change background on hover */
+}
+
+/* Responsive Styles */
+@media only screen and (min-width: 992px) and (max-width: 1170px) {
+  .container {
+      width: 90%; /* Responsive adjustment */
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .single-food {
+      flex-basis: 49%; /* Two columns on medium screens */
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .container {
+      width: 90%; /* More responsive adjustment */
+  }
+  .single-food {
+      flex-basis: 100%; /* One column on small screens */
+  }
+}
