@@ -1,0 +1,93 @@
+/* OrderHistory.css */
+.order-history-container {
+    background-color: #f8f9fa; /* Light background for readability */
+    padding: 20px; /* Add padding around the container */
+    font-family: 'Arial', sans-serif; /* Clean and simple font */
+    max-width: 1200px; /* Limit max width for readability */
+    margin: 0 auto; /* Center align the container */
+}
+
+h1 {
+    color: #333; /* Dark text for the title */
+    margin-bottom: 20px; /* Space below the title */
+    font-size: 2em;
+    text-align: center; /* Center-align the title */
+}
+
+.order-history-grid {
+    display: grid; /* Use grid layout for orders */
+    grid-template-columns: repeat(2, 1fr); /* Two items per row */
+    gap: 20px; /* Space between grid items */
+    margin-top: 20px;
+}
+
+.order-history-item {
+    background-color: #fff; /* White background for each order */
+    border: 1px solid #ddd; /* Light border around each order */
+    border-radius: 8px; /* Rounded corners for each order */
+    padding: 20px; /* Padding inside each order */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for a modern look */
+}
+
+h3 {
+    font-size: 1.5em; /* Slightly larger font for each order heading */
+    margin-bottom: 10px; /* Space below the order heading */
+}
+
+h4 {
+    font-size: 1.2em; /* Slightly larger font for items heading */
+    margin-top: 15px; /* Space above items heading */
+}
+
+p {
+    font-size: 1em; /* Standard text size */
+    margin: 5px 0; /* Space between paragraphs */
+    color: #555; /* Slightly lighter color for text */
+}
+
+strong {
+    font-weight: bold; /* Bold for labels like Order Date, Amount, etc. */
+}
+
+ul {
+    list-style: none; /* Remove default bullet points */
+    padding-left: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+li {
+    font-size: 1em; /* Font size for each item in the list */
+    margin-bottom: 8px; /* Space between each list item */
+}
+
+hr {
+    border: 1px solid #ddd; /* Light border for separating orders */
+    margin-top: 20px; /* Space above the horizontal line */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .order-history-grid {
+        grid-template-columns: 1fr; /* Stack items vertically on smaller screens */
+    }
+
+    .order-history-item {
+        padding: 15px; /* Reduce padding on small screens */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Smaller title for small screens */
+    }
+
+    h3 {
+        font-size: 1.3em; /* Slightly smaller order headings */
+    }
+
+    h4 {
+        font-size: 1.1em; /* Slightly smaller items heading */
+    }
+
+    p {
+        font-size: 0.9em; /* Smaller text for paragraphs */
+    }
+}

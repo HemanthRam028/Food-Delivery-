@@ -1,0 +1,83 @@
+/* Container for the entire menu page */
+.menu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Container for the menu items */
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* Space between items */
+}
+
+/* Each menu item */
+.menu-item {
+  width: 30%; /* Ensures 3 items per row */
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect for scaling */
+.menu-item:hover {
+  transform: scale(1.05);
+}
+
+/* Image style for menu items */
+.menu-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Style for the menu item name */
+.menu-item h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Style for the menu item price */
+.menu-item p {
+  font-size: 16px;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Button for adding to cart */
+.menu-item button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item button:hover {
+  background-color: #2980b9;
+}
+
+/* Message when no menu items are found */
+.no-menu-items {
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+  margin-top: 20px;
+}
