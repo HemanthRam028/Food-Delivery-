@@ -33,28 +33,35 @@ const Header = () => {
     }
   };
 
+  // Scroll event handler (useEffect outside any condition)
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector('.header');
+      if (header) {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        const lastScrollTop = 0; // Reset the scroll position
+
+        if (currentScroll > lastScrollTop && currentScroll > header.offsetHeight) {
+          document.body.classList.add('scrolled-down');
+        } else {
+          document.body.classList.remove('scrolled-down');
+        }
+      }
+    };
+
+    // Add event listener when component mounts
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []); // Empty dependency array ensures this runs only once after the first render
+
   if (loading) {
     return null; 
   }
 
-  let lastScrollTop = 0; // Keep track of the last scroll position
-
-  window.addEventListener('scroll', function() {
-    const header = document.querySelector('.header');
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (currentScroll > lastScrollTop && currentScroll > header.offsetHeight) {
-      // Scrolling down
-      document.body.classList.add('scrolled-down');
-    } else {
-      // Scrolling up
-      document.body.classList.remove('scrolled-down');
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
-  });
-
-  // Fallback image if photoURL is not available
   const userPhoto = user?.photoURL || '/default-profile.png';
 
   return (

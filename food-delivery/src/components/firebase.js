@@ -1,6 +1,6 @@
 // firebase.js
 import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut,  onAuthStateChanged  } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore'; // Import Firestore
 
 const firebaseConfig = {
@@ -23,5 +23,19 @@ const provider = new GoogleAuthProvider();
 // Initialize Firestore
 const db = getFirestore(app); // Initialize Firestore
 
+
+onAuthStateChanged(auth, async (user) => {
+  if (user) {
+    try {
+      // Refresh the token
+      const token = await user.getIdToken(true); 
+      localStorage.setItem("token", token);
+      console.log("Token refreshed successfully.");
+    } catch (error) {
+      console.error("Token refresh failed:", error);
+    }
+  }
+});
+
 // Export auth and Firestore
-export { auth, provider, signInWithPopup, signOut, db }; // Export Firestore as db
+export { auth, provider, signInWithPopup, signOut, db };

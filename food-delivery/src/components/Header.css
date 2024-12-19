@@ -10,7 +10,7 @@ html, body {
   position: relative; /* Keep header fixed at the top */
   top: 0; /* Position at the top */
   left: 0; /* Align to the left */
-  width: 100%; /* Full width */
+  width: 97%; /* Full width */
   background-color: #e9830f;
   color: white;
   padding: 20px;
