@@ -26,7 +26,7 @@ const App = () => {
   // Test Backend Connection
   const checkBackendConnection = async () => {
     try {
-      const response = await axios.get('http://localhost:5002/test');
+      const response = await axios.get('http://localhost:5002');
       console.log('Response from backend:', response.data);
     } catch (error) {
       console.error('Error connecting to backend:', error);
